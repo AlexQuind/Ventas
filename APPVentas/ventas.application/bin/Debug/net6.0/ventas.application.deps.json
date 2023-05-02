@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ventas.application/1.0.0": {
+        "dependencies": {
+          "ventas.domain": "1.0.0"
+        },
+        "runtime": {
+          "ventas.application.dll": {}
+        }
+      },
+      "ventas.domain/1.0.0": {
+        "runtime": {
+          "ventas.domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ventas.application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ventas.domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,15 @@
+C:\Users\alexa\Documents\Ventas\APPVentas\ventas.application\bin\Debug\net6.0\ventas.application.deps.json
+C:\Users\alexa\Documents\Ventas\APPVentas\ventas.application\bin\Debug\net6.0\ventas.application.dll
+C:\Users\alexa\Documents\Ventas\APPVentas\ventas.application\bin\Debug\net6.0\ventas.application.pdb
+C:\Users\alexa\Documents\Ventas\APPVentas\ventas.application\bin\Debug\net6.0\ventas.domain.dll
+C:\Users\alexa\Documents\Ventas\APPVentas\ventas.application\bin\Debug\net6.0\ventas.domain.pdb
+C:\Users\alexa\Documents\Ventas\APPVentas\ventas.application\obj\Debug\net6.0\ventas.application.csproj.AssemblyReference.cache
+C:\Users\alexa\Documents\Ventas\APPVentas\ventas.application\obj\Debug\net6.0\ventas.application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexa\Documents\Ventas\APPVentas\ventas.application\obj\Debug\net6.0\ventas.application.AssemblyInfoInputs.cache
+C:\Users\alexa\Documents\Ventas\APPVentas\ventas.application\obj\Debug\net6.0\ventas.application.AssemblyInfo.cs
+C:\Users\alexa\Documents\Ventas\APPVentas\ventas.application\obj\Debug\net6.0\ventas.application.csproj.CoreCompileInputs.cache
+C:\Users\alexa\Documents\Ventas\APPVentas\ventas.application\obj\Debug\net6.0\ventas.application.csproj.CopyComplete
+C:\Users\alexa\Documents\Ventas\APPVentas\ventas.application\obj\Debug\net6.0\ventas.application.dll
+C:\Users\alexa\Documents\Ventas\APPVentas\ventas.application\obj\Debug\net6.0\refint\ventas.application.dll
+C:\Users\alexa\Documents\Ventas\APPVentas\ventas.application\obj\Debug\net6.0\ventas.application.pdb
+C:\Users\alexa\Documents\Ventas\APPVentas\ventas.application\obj\Debug\net6.0\ref\ventas.application.dll
