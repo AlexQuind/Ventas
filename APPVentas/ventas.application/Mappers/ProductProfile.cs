@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using ventas.application.DTOs;
+using ventas.domain.model;
 
 namespace ventas.application.Mappers
 {
-	public class ProductProfile
+	public class ProductProfile : Profile
 	{
+		public ProductProfile()
+		{
+			CreateMap<Product, ProductDTO>();
+			CreateMap<ProductDTO, Product>();
+		}
 	}
 }

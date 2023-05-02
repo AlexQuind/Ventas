@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using ventas.domain.model;
 using ventas.domain.ports.repositories;
 using ventas.domain.ports.service.Interfaces;
@@ -72,6 +73,11 @@ namespace ventas.domain.ports.service
 			if (string.IsNullOrEmpty(product.Name))
 			{
 				throw new ArgumentException("El nombre del producto no puede estar vacío", nameof(product));
+			}
+
+			if (product.Name.Length < 3)
+			{
+				throw new ArgumentException("El nombre del producto debe tener al menos 3 caracteres.");
 			}
 
 			if (product.Price <= 0)
