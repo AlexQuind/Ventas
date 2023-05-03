@@ -61,7 +61,7 @@ namespace ventas.domain.ports.service
 			var existingProduct = await _productRepository.GetProductById(product.Id);
 			
 			if (existingProduct == null)
-				throw new ArgumentException($"Product {product} no existe");
+				throw new ArgumentException($"Producto {product} no existe");
 
 			existingProduct.Name = product.Name;
 			existingProduct.Price = product.Price;

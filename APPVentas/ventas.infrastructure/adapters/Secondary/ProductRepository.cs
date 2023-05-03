@@ -51,8 +51,15 @@ namespace ventas.infrastructure.Adapters.Secondary
 
 		public async Task UpdateAsync(Product product)
 		{
-			_dbContext.Product.Update(product);
-			await _dbContext.SaveChangesAsync();
+			var productSelect = await _dbContext.Product.FirstOrDefaultAsync(p => p.Id == product.Id);
+			if (productSelect !=null) {
+				productSelect.Name = product.Name;
+				productSelect.Price = product.Price;
+				productSelect.Stock = product.Stock;
+
+				_dbContext.Entry(productSelect).State = EntityState.Modified;
+				await _dbContext.SaveChangesAsync();
+			}
 		}
 	}
 }

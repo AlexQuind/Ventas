@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ventas.application.DTOs;
+using ventas.application.UseCases;
 using ventas.application.UseCases.Interfaces;
 using ventas.domain.model;
 
@@ -41,21 +43,39 @@ namespace ventas.API.Controllers
 		}
 
 		[HttpPost]
+		
+
 		public async Task<IActionResult> CreateProduct([FromBody] ProductDTO productDTO)
 		{
-			await _productUseCase.CreateProductAsync(productDTO);
-			return CreatedAtAction(nameof(GetByIdAsync), new { id = productDTO.Id }, productDTO);
+			try
+			{
+				await _productUseCase.CreateProductAsync(productDTO);
+				return Ok("Producto Creado satisfactoriamente!!!!!");
+			}
+			catch (Exception ex)
+			{
+				return StatusCode(500, "Ha ocurrido un error al crear el producto: " + ex.Message);
+			}
 		}
 
 		[HttpPut("{id}")]
-		public async Task<IActionResult> UpdateProduct(int id, [FromBody] ProductDTO productDTO)
+		public async Task<IActionResult> UpdateProduct(int id, ProductDTO product)
 		{
-			if (id != productDTO.Id)
+			try
 			{
-				return BadRequest();
+				if (id != product.Id)
+				{
+					throw new ArgumentException("El ID del producto proporcionado no coincide con el ID de la ruta.");
+				}
+
+				await _productUseCase.UpdateProduct(product);
+
+				return Ok("Producto actualizado correctamente");
 			}
-			await _productUseCase.UpdateProduct(productDTO);
-			return NoContent();
+			catch (Exception ex)
+			{
+				throw new Exception("Error al actualizar el producto.", ex);
+			}
 		}
 
 		[HttpDelete("{id}")]
