@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GByEWx0o6YPCzwTbr7JbLzMEJoYHID2eTi4suYAeADhbTDu7c6mRGBDjqgTV0VOqZ+4NLzIWkVPdWmFQ7Wnfiw==",
+  "dgSpecHash": "kzkgO6HKWlWAW6tvhELYCK3xiAsgC/iVOVx2i0+oI+WRg1vVy8VjMoXAnDgI5N7Z7SBjGOAG5h5ywLuWYu6uVA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.infrastructure\\ventas.infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.infrastructure\\ventas.infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexa\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",

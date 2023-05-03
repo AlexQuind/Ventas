@@ -10,3 +10,15 @@ C:\Users\alexa\Documents\Ventas\APPVentas\ventas.domain\obj\Debug\net6.0\ventas.
 C:\Users\alexa\Documents\Ventas\APPVentas\ventas.domain\obj\Debug\net6.0\refint\ventas.domain.dll
 C:\Users\alexa\Documents\Ventas\APPVentas\ventas.domain\obj\Debug\net6.0\ventas.domain.pdb
 C:\Users\alexa\Documents\Ventas\APPVentas\ventas.domain\obj\Debug\net6.0\ref\ventas.domain.dll
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.domain\bin\Debug\net6.0\ventas.domain.deps.json
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.domain\bin\Debug\net6.0\ventas.domain.dll
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.domain\bin\Debug\net6.0\ventas.domain.pdb
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.domain\obj\Debug\net6.0\ventas.domain.csproj.AssemblyReference.cache
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.domain\obj\Debug\net6.0\ventas.domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.domain\obj\Debug\net6.0\ventas.domain.AssemblyInfoInputs.cache
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.domain\obj\Debug\net6.0\ventas.domain.AssemblyInfo.cs
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.domain\obj\Debug\net6.0\ventas.domain.csproj.CoreCompileInputs.cache
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.domain\obj\Debug\net6.0\ventas.domain.dll
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.domain\obj\Debug\net6.0\refint\ventas.domain.dll
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.domain\obj\Debug\net6.0\ventas.domain.pdb
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.domain\obj\Debug\net6.0\ref\ventas.domain.dll

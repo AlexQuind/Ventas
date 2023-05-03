@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CEIamWyOeN/90yQUOpMqE+vLQFGmV6ch0DwcnuImE/tcDrNRgaoOaUHgZTbU2M8+Bgt0E5VJuNVaryTKyLzcLQ==",
+  "dgSpecHash": "wtKbGgFXCpelTvqGNLeeaRtF8ryJvhG+iUJFOG6rMBZXdMbYgqhiJf4sAmUYqMqHuD7j4pzfnqmDL1dMNZcafQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.API\\ventas.API.csproj",
+  "projectFilePath": "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.API\\ventas.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexa\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

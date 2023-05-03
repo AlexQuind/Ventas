@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.domain\\ventas.domain.csproj",
+      "projectUniqueName": "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.domain\\ventas.domain.csproj",
       "projectName": "ventas.domain",
-      "projectPath": "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.domain\\ventas.domain.csproj",
+      "projectPath": "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.domain\\ventas.domain.csproj",
       "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.domain\\obj\\",
+      "outputPath": "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",

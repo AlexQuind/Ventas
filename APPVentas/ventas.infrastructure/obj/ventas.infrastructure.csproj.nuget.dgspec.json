@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.infrastructure\\ventas.infrastructure.csproj": {}
+    "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.infrastructure\\ventas.infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.application\\ventas.application.csproj": {
+    "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.application\\ventas.application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.application\\ventas.application.csproj",
+        "projectUniqueName": "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.application\\ventas.application.csproj",
         "projectName": "ventas.application",
-        "projectPath": "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.application\\ventas.application.csproj",
+        "projectPath": "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.application\\ventas.application.csproj",
         "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.application\\obj\\",
+        "outputPath": "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.domain\\ventas.domain.csproj": {
-                "projectPath": "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.domain\\ventas.domain.csproj"
+              "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.domain\\ventas.domain.csproj": {
+                "projectPath": "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.domain\\ventas.domain.csproj"
               }
             }
           }
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.domain\\ventas.domain.csproj": {
+    "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.domain\\ventas.domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.domain\\ventas.domain.csproj",
+        "projectUniqueName": "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.domain\\ventas.domain.csproj",
         "projectName": "ventas.domain",
-        "projectPath": "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.domain\\ventas.domain.csproj",
+        "projectPath": "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.domain\\ventas.domain.csproj",
         "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.domain\\obj\\",
+        "outputPath": "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -124,14 +124,14 @@
         }
       }
     },
-    "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.infrastructure\\ventas.infrastructure.csproj": {
+    "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.infrastructure\\ventas.infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.infrastructure\\ventas.infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.infrastructure\\ventas.infrastructure.csproj",
         "projectName": "ventas.infrastructure",
-        "projectPath": "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.infrastructure\\ventas.infrastructure.csproj",
+        "projectPath": "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.infrastructure\\ventas.infrastructure.csproj",
         "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -148,11 +148,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.application\\ventas.application.csproj": {
-                "projectPath": "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.application\\ventas.application.csproj"
+              "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.application\\ventas.application.csproj": {
+                "projectPath": "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.application\\ventas.application.csproj"
               },
-              "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.domain\\ventas.domain.csproj": {
-                "projectPath": "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.domain\\ventas.domain.csproj"
+              "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.domain\\ventas.domain.csproj": {
+                "projectPath": "C:\\Users\\alexa\\Documents\\APPVentas\\APPVentas\\ventas.domain\\ventas.domain.csproj"
               }
             }
           }
