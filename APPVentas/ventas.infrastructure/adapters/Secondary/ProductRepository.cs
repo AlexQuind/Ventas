@@ -20,7 +20,7 @@ namespace ventas.infrastructure.Adapters.Secondary
 
 		public async Task<Product> GetProductById(int id)
 		{
-			var product = await _dbContext.Products.FirstOrDefaultAsync(p => p.Id == id);
+			var product = await _dbContext.Product.FirstOrDefaultAsync(p => p.Id == id);
 			if (product == null)
 			{
 				throw new Exception("Producto no encontrado");
@@ -28,30 +28,30 @@ namespace ventas.infrastructure.Adapters.Secondary
 			return product;
 		}
 
-		public async Task<IEnumerable<Product>> GetProducts()
+		public async Task<List<Product>> GetProducts()
 		{
-			return await _dbContext.Products.ToListAsync();
+			return await _dbContext.Product.ToListAsync();
 		}
 
 		public async Task DeleteAsync(int id)
 		{
-			var product = await _dbContext.Products.FirstOrDefaultAsync(p => p.Id == id);
+			var product = await _dbContext.Product.FirstOrDefaultAsync(p => p.Id == id);
 			if (product != null)
 			{
-				_dbContext.Products.Remove(product);
+				_dbContext.Product.Remove(product);
 				await _dbContext.SaveChangesAsync();
 			}
 		}
 
 		public async Task AddAsync(Product product)
 		{
-			await _dbContext.Products.AddAsync(product);
+			await _dbContext.Product.AddAsync(product);
 			await _dbContext.SaveChangesAsync();
 		}
 
 		public async Task UpdateAsync(Product product)
 		{
-			_dbContext.Products.Update(product);
+			_dbContext.Product.Update(product);
 			await _dbContext.SaveChangesAsync();
 		}
 	}

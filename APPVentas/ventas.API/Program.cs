@@ -1,6 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Data;
+using ventas.application.Mappers;
+using ventas.application.UseCases;
+using ventas.application.UseCases.Interfaces;
 using ventas.domain.ports.repositories;
 using ventas.domain.ports.service;
 using ventas.domain.ports.service.Interfaces;
@@ -12,11 +15,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 var services = builder.Services;
-
-services.AddControllers();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-services.AddDbContext<ProductContext>(options => options.UseSqlServer(connectionString));
-services.AddScoped<IDbConnection>(x => x.GetRequiredService<ProductContext>().Database.GetDbConnection());
+services.AddDbContext<ProductContext>(options =>
+{
+	options.UseSqlServer(connectionString);
+	//x.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+});
+
+//services.AddDbContext<ProductContext>(options => options.UseSqlServer(connectionString));
+//services.AddScoped<IDbConnection>(x => x.GetRequiredService<ProductContext>().Database.GetDbConnection());
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
@@ -24,9 +31,10 @@ services.AddSwaggerGen();
 services.AddTransient<IProductService, ProductService>();
 services.AddTransient<IProductRepository, ProductRepository>();
 services.AddTransient<IProductService, ProductService>();
-//services.AddTransient<IProductUseCase, ProductUseCase>();
-//services.AddTransient<IProductoAdapter, ProductoAdapter>();
+services.AddTransient<IProductUseCase, ProductUseCase>();
+services.AddAutoMapper(typeof(ProductProfile));
 
+services.AddControllers();
 
 var app = builder.Build();
 

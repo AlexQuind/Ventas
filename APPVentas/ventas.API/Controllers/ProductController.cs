@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ventas.application.DTOs;
+using ventas.application.UseCases.Interfaces;
 using ventas.domain.model;
-using ventas.infrastructure.adapters;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,50 +15,54 @@ namespace ventas.API.Controllers
 	[ApiController]
 	public class ProductController : ControllerBase
 	{
-		private readonly IProductoAdapter _productoAdapter;
+		private readonly IProductUseCase _productUseCase;
 
-		public ProductController(IProductoAdapter productoAdapter)
+		public ProductController(IProductUseCase productUseCase)
 		{
-			_productoAdapter = productoAdapter;
+			_productUseCase = productUseCase;
 		}
 
-		// GET api/<ProductController>/5
-		[HttpGet("{id}")]
-		public IActionResult Get(int id)
+		[HttpGet]
+		public async Task<IActionResult> GetAllProducts()
 		{
-			var product = _productoAdapter.ObtenerProductoPorId(id);
+			var products = await _productUseCase.GetAllProductsAsync();
+			return Ok(products);
+		}
 
+		[HttpGet("{id}")]
+		public async Task<ActionResult<ProductDTO>> GetByIdAsync(int id)
+		{
+			var product = await _productUseCase.GetProductByIdAsync(id);
 			if (product == null)
 			{
 				return NotFound();
 			}
-
-			var productModel = new ProductDTO
-			{
-				Id = product.Id,
-				Name = product.Name,
-				Price = product.Price
-			};
-
-			return Ok(productModel);
+			return product;
 		}
 
-		// POST api/<ProductController>
 		[HttpPost]
-		public IActionResult Post([FromBody] ProductDTO productModel)
+		public async Task<IActionResult> CreateProduct([FromBody] ProductDTO productDTO)
 		{
-			var product = new Product
-			{
-				Name = productModel.Name,
-				Price = productModel.Price
-			};
-
-			_productoAdapter.CrearProducto(productModel);
-
-			productModel.Id = product.Id;
-
-			return CreatedAtAction(nameof(Get), new { id = product.Id }, productModel);
+			await _productUseCase.CreateProductAsync(productDTO);
+			return CreatedAtAction(nameof(GetByIdAsync), new { id = productDTO.Id }, productDTO);
 		}
 
+		[HttpPut("{id}")]
+		public async Task<IActionResult> UpdateProduct(int id, [FromBody] ProductDTO productDTO)
+		{
+			if (id != productDTO.Id)
+			{
+				return BadRequest();
+			}
+			await _productUseCase.UpdateProduct(productDTO);
+			return NoContent();
+		}
+
+		[HttpDelete("{id}")]
+		public async Task<IActionResult> DeleteProduct(int id)
+		{
+			await _productUseCase.DeleteProduct(id);
+			return Ok("El Producto ha sido eliminado satisfactoriamente");
+		}	
 	}
 }

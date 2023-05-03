@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "6PalpvAs6w51flpyOOQWjV3oMS2QBeqv7PVxRNeR264KlQZKMEKlVjzYAOjw66gFk6J4mQUzIlQdmUZYUGx8zg==",
+  "dgSpecHash": "CEIamWyOeN/90yQUOpMqE+vLQFGmV6ch0DwcnuImE/tcDrNRgaoOaUHgZTbU2M8+Bgt0E5VJuNVaryTKyLzcLQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\alexa\\Documents\\Ventas\\APPVentas\\ventas.API\\ventas.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexa\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\alexa\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

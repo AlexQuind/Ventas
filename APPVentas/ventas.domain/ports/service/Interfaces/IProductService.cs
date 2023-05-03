@@ -11,7 +11,7 @@ namespace ventas.domain.ports.service.Interfaces
     {
 		Task CreateProductAsync(Product product);
 		Task<Product> GetProductByIdAsync(int id);
-		Task<IEnumerable<Product>> GetAllProductsAsync();
+		Task<List<Product>> GetAllProductsAsync();
 		Task UpdateProductAsync(Product product);
 		Task DeleteProductAsync(int id);
 	}

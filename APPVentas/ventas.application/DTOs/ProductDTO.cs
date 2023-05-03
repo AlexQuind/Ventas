@@ -20,6 +20,5 @@ namespace ventas.application.DTOs
 			Price = price;
 			Stock = stock;
 		}
-
 	}
 }

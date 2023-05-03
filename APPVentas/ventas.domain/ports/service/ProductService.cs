@@ -38,9 +38,10 @@ namespace ventas.domain.ports.service
 			await _productRepository.DeleteAsync(id);
 		}
 
-		public async Task<IEnumerable<Product>> GetAllProductsAsync()
+		public async Task<List<Product>> GetAllProductsAsync()
 		{
-			return await _productRepository.GetProducts();
+			var products = await _productRepository.GetProducts();
+			return products;
 		}
 
 		public async Task<Product> GetProductByIdAsync(int id)
@@ -58,11 +59,13 @@ namespace ventas.domain.ports.service
 		public async Task UpdateProductAsync(Product product)
 		{
 			var existingProduct = await _productRepository.GetProductById(product.Id);
+			
 			if (existingProduct == null)
-			{
-				throw new ArgumentException("Producto no encontrado", nameof(product));
-			}
+				throw new ArgumentException($"Product {product} no existe");
 
+			existingProduct.Name = product.Name;
+			existingProduct.Price = product.Price;
+			existingProduct.Stock = product.Stock;
 			ValidateProduct(product);
 
 			await _productRepository.UpdateAsync(product);
