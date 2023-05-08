@@ -8,19 +8,30 @@ using ventas.domain.ports.repositories;
 using ventas.domain.ports.service;
 using ventas.domain.ports.service.Interfaces;
 using ventas.infrastructure.Adapters.Secondary;
-using ventas.infrastructure.Context;
+using ventas.infrastructure.DbContexts;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
 
 // Add services to the container.
 
 var services = builder.Services;
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-services.AddDbContext<ProductContext>(options =>
+services.AddDbContext<VentasContext>(options =>
 {
 	options.UseSqlServer(connectionString);
 	//x.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 });
+
+//region "Cors"
+
+var misReglasCors = "corsapp";
+
+services.AddCors(p => p.AddPolicy(misReglasCors, builder =>
+{
+	builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
 
 //services.AddDbContext<ProductContext>(options => options.UseSqlServer(connectionString));
 //services.AddScoped<IDbConnection>(x => x.GetRequiredService<ProductContext>().Database.GetDbConnection());
@@ -45,6 +56,8 @@ if (app.Environment.IsDevelopment())
 	app.UseSwagger();
 	app.UseSwaggerUI();
 }
+
+app.UseCors(misReglasCors);
 
 app.UseHttpsRedirection();
 
