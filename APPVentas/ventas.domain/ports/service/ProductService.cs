@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using ventas.domain.BusinessRules;
 using ventas.domain.model;
 using ventas.domain.ports.repositories;
 using ventas.domain.ports.service.Interfaces;
@@ -21,66 +22,49 @@ namespace ventas.domain.ports.service
 
 		public async Task CreateProductAsync(Product product)
 		{
-			ValidateProduct(product);
-
+			BusinessRulesValidator.ValidateProduct(product, productId =>
+			{
+				return _productRepository.GetProductByName(product.Name) .Result? .Id != productId;
+			});
 			await _productRepository.AddAsync(product);
 		}
 
 		public async Task DeleteProductAsync(int id)
 		{
-			var existingProduct = await _productRepository.GetProductById(id) ?? throw new Exception("Producto no Encontrado");
+			if (await _productRepository.GetProductById(id) == null)
+			{
+				throw new ProductoNoEncontradoException(id);
+			}
+
 			await _productRepository.DeleteAsync(id);
+
+			return;
 		}
 
 		public async Task<List<Product>> GetAllProductsAsync()
 		{
-			var products = await _productRepository.GetProducts();
-			return products;
+			return await _productRepository.GetProducts();
 		}
 
 		public async Task<Product> GetProductByIdAsync(int id)
 		{
-			var product = await _productRepository.GetProductById(id) ?? throw new Exception("Producto no encontrado");
-			return product;
+			return await _productRepository.GetProductById(id) ?? throw new ProductoNoEncontradoException(id);
 		}
 
 		public async Task UpdateProductAsync(Product product)
 		{
-			var existingProduct = await _productRepository.GetProductById(product.Id);
-			
-			if (existingProduct == null)
-				throw new ArgumentException($"Producto {product} no existe");
-
+			var existingProduct = await _productRepository.GetProductById(product.Id) ?? throw new ArgumentException($"Producto {product} no existe");
 			existingProduct.Name = product.Name;
 			existingProduct.Price = product.Price;
 			existingProduct.Stock = product.Stock;
-			ValidateProduct(product);
-
-			await _productRepository.UpdateAsync(product);
-		}
-
-		private static void ValidateProduct(Product product)
-		{
-			if (string.IsNullOrEmpty(product.Name))
+			BusinessRulesValidator.ValidateProduct(existingProduct, productId =>
 			{
-				throw new ArgumentException("El nombre del producto no puede estar vacío", nameof(product));
-			}
+				// Comprueba si ya existe un producto con el mismo nombre, pero distinto ID
+				var productByName = _productRepository.GetProductByName(product.Name).Result;
+				return productByName != null && productByName.Id != productId;
+			});
 
-			if (product.Name.Length < 3)
-			{
-				throw new ArgumentException("El nombre del producto debe tener al menos 3 caracteres.");
-			}
-
-			if (product.Price <= 0)
-			{
-				throw new ArgumentException("El precio del producto debe ser mayor que cero", nameof(product));
-			}
-
-			if (product.Stock <= 0)
-			{
-				throw new ArgumentException("El stock de productos debe ser mayor o igual a cero", nameof(product));
-			}
+			await _productRepository.UpdateAsync(existingProduct);
 		}
 	}
 }
-

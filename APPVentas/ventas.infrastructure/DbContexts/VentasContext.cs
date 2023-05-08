@@ -22,11 +22,6 @@ namespace ventas.infrastructure.DbContexts
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			//IConfigurationBuilder builder = new ConfigurationBuilder().AddJsonFile("appsettings.json", false, true);
-			//IConfigurationRoot root = builder.Build();
-
-			//optionsBuilder.UseSqlServer(root["ConnectionStrings:Financiero"]);
-
 			optionsBuilder.UseSqlServer("Data Source=DEV_Alexander\\SQLEXPRESS;Initial Catalog=DbVentas; Integrated Security=True;TrustServerCertificate=True");
 		}
 

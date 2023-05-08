@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ventas.application.DTOs;
-using ventas.application.UseCases;
 using ventas.application.UseCases.Interfaces;
-using ventas.domain.model;
+using ventas.infrastructure.Maestras;
+using static ventas.infrastructure.Maestras.MensajeBase;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -43,38 +43,37 @@ namespace ventas.API.Controllers
 		}
 
 		[HttpPost]
-		
-
 		public async Task<IActionResult> CreateProduct([FromBody] ProductDTO productDTO)
 		{
 			try
 			{
 				await _productUseCase.CreateProductAsync(productDTO);
-				return Ok("Producto Creado satisfactoriamente!!!!!");
+				return Ok(Satisfactory.Insertado.GetEnumDescription());
 			}
 			catch (Exception ex)
 			{
-				return StatusCode(500, "Ha ocurrido un error al crear el producto: " + ex.Message);
+				return StatusCode(500,Error.Insertar.GetEnumDescription() + ex.Message);
 			}
 		}
 
 		[HttpPut("{id}")]
+
 		public async Task<IActionResult> UpdateProduct(int id, ProductDTO product)
 		{
 			try
 			{
 				if (id != product.Id)
 				{
-					throw new ArgumentException("El ID del producto proporcionado no coincide con el ID de la ruta.");
+					throw new ArgumentException(Excepcion.Actualizar.GetEnumDescription());
 				}
 
 				await _productUseCase.UpdateProduct(product);
 
-				return Ok("Producto actualizado correctamente");
+				return Ok(Satisfactory.Actualizado.GetEnumDescription());
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Error al actualizar el producto.", ex);
+				throw new Exception(Error.Actualizar.GetEnumDescription(), ex);
 			}
 		}
 
@@ -82,7 +81,7 @@ namespace ventas.API.Controllers
 		public async Task<IActionResult> DeleteProduct(int id)
 		{
 			await _productUseCase.DeleteProduct(id);
-			return Ok("El Producto ha sido eliminado satisfactoriamente");
+			return Ok(Satisfactory.Eliminado.GetEnumDescription());
 		}	
 	}
 }

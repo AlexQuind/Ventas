@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ventas.domain.BusinessRules;
 using ventas.domain.model;
 using ventas.domain.ports.repositories;
 using ventas.infrastructure.DbContexts;
@@ -26,7 +27,7 @@ namespace ventas.infrastructure.Adapters.Secondary
 		public async Task<Product> GetProductById(int id)
 		{
 			var productEntity = await _dbContext.Product.FirstOrDefaultAsync(p => p.Id == id);
-			return productEntity == null ? throw new Exception("Producto no encontrado") : _mapper.Map<Product>(productEntity);
+			return productEntity == null ? throw new ProductoNoEncontradoException(id) : _mapper.Map<Product>(productEntity);
 		}
 
 		public async Task<List<Product>> GetProducts()
@@ -63,6 +64,12 @@ namespace ventas.infrastructure.Adapters.Secondary
 				_dbContext.Entry(productSelect).State = EntityState.Modified;
 				await _dbContext.SaveChangesAsync();
 			}
+		}
+
+		public async Task<Product> GetProductByName(string name)
+		{
+			var productEntity = await _dbContext.Product.FirstOrDefaultAsync(p => p.Name == name);
+			return productEntity == null ? throw new Exception("Producto no encontrado") : _mapper.Map<Product>(productEntity);
 		}
 	}
 }
