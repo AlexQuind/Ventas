@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,31 +7,32 @@ using System.Text;
 using System.Threading.Tasks;
 using ventas.domain.model;
 using ventas.domain.ports.repositories;
-using ventas.infrastructure.Context;
+using ventas.infrastructure.DbContexts;
+using ventas.infrastructure.Entidades;
 
 namespace ventas.infrastructure.Adapters.Secondary
 {
 	public class ProductRepository : IProductRepository
 	{
-		private readonly ProductContext _dbContext;
-		public ProductRepository(ProductContext dbContext)
+		private readonly VentasContext _dbContext;
+		private readonly IMapper _mapper;
+
+		public ProductRepository(VentasContext dbContext, IMapper mapper)
 		{
 			_dbContext = dbContext;
+			_mapper = mapper;
 		}
 
 		public async Task<Product> GetProductById(int id)
 		{
-			var product = await _dbContext.Product.FirstOrDefaultAsync(p => p.Id == id);
-			if (product == null)
-			{
-				throw new Exception("Producto no encontrado");
-			}
-			return product;
+			var productEntity = await _dbContext.Product.FirstOrDefaultAsync(p => p.Id == id);
+			return productEntity == null ? throw new Exception("Producto no encontrado") : _mapper.Map<Product>(productEntity);
 		}
 
 		public async Task<List<Product>> GetProducts()
 		{
-			return await _dbContext.Product.ToListAsync();
+			var productEntities = await _dbContext.Product.ToListAsync();
+			return _mapper.Map<List<Product>>(productEntities);
 		}
 
 		public async Task DeleteAsync(int id)
@@ -45,7 +47,8 @@ namespace ventas.infrastructure.Adapters.Secondary
 
 		public async Task AddAsync(Product product)
 		{
-			await _dbContext.Product.AddAsync(product);
+			var productEntity = _mapper.Map<ProductEntity>(product);
+			await _dbContext.Product.AddAsync(productEntity);
 			await _dbContext.SaveChangesAsync();
 		}
 

@@ -28,13 +28,7 @@ namespace ventas.domain.ports.service
 
 		public async Task DeleteProductAsync(int id)
 		{
-			var existingProduct = await _productRepository.GetProductById(id);
-
-			if (existingProduct == null)
-			{
-				throw new Exception("Producto no Encontrado");
-			}
-
+			var existingProduct = await _productRepository.GetProductById(id) ?? throw new Exception("Producto no Encontrado");
 			await _productRepository.DeleteAsync(id);
 		}
 
@@ -46,13 +40,7 @@ namespace ventas.domain.ports.service
 
 		public async Task<Product> GetProductByIdAsync(int id)
 		{
-			var product = await _productRepository.GetProductById(id);
-
-			if (product == null)
-			{
-				throw new Exception("Producto no encontrado");
-			}
-
+			var product = await _productRepository.GetProductById(id) ?? throw new Exception("Producto no encontrado");
 			return product;
 		}
 
@@ -71,7 +59,7 @@ namespace ventas.domain.ports.service
 			await _productRepository.UpdateAsync(product);
 		}
 
-		private void ValidateProduct(Product product)
+		private static void ValidateProduct(Product product)
 		{
 			if (string.IsNullOrEmpty(product.Name))
 			{
@@ -88,7 +76,7 @@ namespace ventas.domain.ports.service
 				throw new ArgumentException("El precio del producto debe ser mayor que cero", nameof(product));
 			}
 
-			if (product.Stock < 0)
+			if (product.Stock <= 0)
 			{
 				throw new ArgumentException("El stock de productos debe ser mayor o igual a cero", nameof(product));
 			}

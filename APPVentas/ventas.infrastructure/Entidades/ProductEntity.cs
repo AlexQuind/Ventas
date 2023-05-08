@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ventas.domain.model
+namespace ventas.infrastructure.Entidades
 {
-	public class Product	
+	public class ProductEntity
 	{
 		public int Id { get; set; }
 		public string? Name { get; set; }
