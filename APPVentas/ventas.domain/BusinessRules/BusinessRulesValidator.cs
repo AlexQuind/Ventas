@@ -20,9 +20,9 @@ namespace ventas.domain.BusinessRules
 		private const string SHORTNAME = "El nombre del producto debe tener al menos 3 caracteres";
 		private const string NEGATIVEPRICE = "El precio del producto debe ser mayor que cero";
 		private const string NEGATIVESTOCK = "El stock de productos debe ser mayor o igual a cero";
-		private const string DUPLICATENAME = "Ya existe un producto con el mismo nombre";
 
-		public static void ValidateProduct(Product product, Func<int, bool> isProductExists)
+		public static void ValidateProduct(Product product)
+
 		{
 			if (string.IsNullOrWhiteSpace(product.Name))
 			{
@@ -42,11 +42,6 @@ namespace ventas.domain.BusinessRules
 			if (product.Stock < 0)
 			{
 				throw new ArgumentException(NEGATIVESTOCK, nameof(product));
-			}
-
-			if (isProductExists(product.Id))
-			{
-				throw new ArgumentException(DUPLICATENAME, nameof(product));
 			}
 		}
 	}

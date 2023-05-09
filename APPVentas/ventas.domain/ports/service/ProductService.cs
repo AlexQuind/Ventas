@@ -22,10 +22,10 @@ namespace ventas.domain.ports.service
 
 		public async Task CreateProductAsync(Product product)
 		{
-			BusinessRulesValidator.ValidateProduct(product, productId =>
-			{
-				return _productRepository.GetProductByName(product.Name) .Result? .Id != productId;
-			});
+			// Validate the product using a business rule validator
+			BusinessRulesValidator.ValidateProduct(product);
+
+			// Add the product to the repository
 			await _productRepository.AddAsync(product);
 		}
 
@@ -53,17 +53,20 @@ namespace ventas.domain.ports.service
 
 		public async Task UpdateProductAsync(Product product)
 		{
-			var existingProduct = await _productRepository.GetProductById(product.Id) ?? throw new ArgumentException($"Producto {product} no existe");
+			// Check if product exists in the repository
+			var existingProduct = await _productRepository.GetProductById(product.Id);
+			if (existingProduct == null)
+			{
+				throw new ProductoNoEncontradoException(product.Id);
+			}
+
+			// Validate the updated product using a business rule validator
+			BusinessRulesValidator.ValidateProduct(product);
+
+			// Update the product in the repository
 			existingProduct.Name = product.Name;
 			existingProduct.Price = product.Price;
 			existingProduct.Stock = product.Stock;
-			BusinessRulesValidator.ValidateProduct(existingProduct, productId =>
-			{
-				// Comprueba si ya existe un producto con el mismo nombre, pero distinto ID
-				var productByName = _productRepository.GetProductByName(product.Name).Result;
-				return productByName != null && productByName.Id != productId;
-			});
-
 			await _productRepository.UpdateAsync(existingProduct);
 		}
 	}

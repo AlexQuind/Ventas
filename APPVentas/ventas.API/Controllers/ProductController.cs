@@ -52,12 +52,11 @@ namespace ventas.API.Controllers
 			}
 			catch (Exception ex)
 			{
-				return StatusCode(500,Error.Insertar.GetEnumDescription() + ex.Message);
+				return StatusCode(500, Error.Insertar.GetEnumDescription() + ", " + ex.Message);
 			}
 		}
 
 		[HttpPut("{id}")]
-
 		public async Task<IActionResult> UpdateProduct(int id, ProductDTO product)
 		{
 			try
@@ -85,3 +84,4 @@ namespace ventas.API.Controllers
 		}	
 	}
 }
+

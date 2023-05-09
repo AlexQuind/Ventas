@@ -9,7 +9,7 @@ namespace ventas.application.Maestras
 {
 	public static class MensajeBase
 	{
-		public enum satisfactory
+		public enum Satisfactory
 		{
 			[Description("Guardado Correctamente")]
 			Insertado,
