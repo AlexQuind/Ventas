@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ventas.domain.model;
 using ventas.infrastructure.Configs;
 using ventas.infrastructure.Entidades;
 
@@ -26,12 +25,15 @@ namespace ventas.infrastructure.DbContexts
 		}
 
 		public DbSet<ProductEntity> Product { get; set; }
+		
+
 
 		protected override void OnModelCreating(ModelBuilder builder)
 		{
 			base.OnModelCreating(builder);
 
 			builder.ApplyConfiguration(new ProductConfig());
+			
 		}
 
 	}

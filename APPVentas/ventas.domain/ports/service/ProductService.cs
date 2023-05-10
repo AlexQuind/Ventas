@@ -54,11 +54,7 @@ namespace ventas.domain.ports.service
 		public async Task UpdateProductAsync(Product product)
 		{
 			// Check if product exists in the repository
-			var existingProduct = await _productRepository.GetProductById(product.Id);
-			if (existingProduct == null)
-			{
-				throw new ProductoNoEncontradoException(product.Id);
-			}
+			var existingProduct = await _productRepository.GetProductById(product.Id) ?? throw new ProductoNoEncontradoException(product.Id);
 
 			// Validate the updated product using a business rule validator
 			BusinessRulesValidator.ValidateProduct(product);

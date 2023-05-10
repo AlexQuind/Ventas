@@ -9,8 +9,8 @@ namespace ventas.domain.model
 	public class Sale
 	{
 		public int Id { get; set; }
-		public DateTime Fecha { get; set; }
-		public List<Product> products { get; set; } = new List<Product>();
+		
+		public List<Product> Products { get; set; } = new List<Product>();
 		public decimal Total { get; set; }
 	}
 }
