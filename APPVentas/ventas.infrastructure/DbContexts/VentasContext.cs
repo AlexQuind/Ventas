@@ -21,11 +21,12 @@ namespace ventas.infrastructure.DbContexts
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer("Data Source=DEV_Alexander\\SQLEXPRESS;Initial Catalog=DbVentas; Integrated Security=True;TrustServerCertificate=True");
+			optionsBuilder.UseOracle("Data Source=localhost:1521/xe;User ID=ventasQ;Password=123456789");
 		}
 
+		public DbSet<CategoryEntity> Categories { get; set; }
 		public DbSet<ProductEntity> Product { get; set; }
-		
+
 
 
 		protected override void OnModelCreating(ModelBuilder builder)

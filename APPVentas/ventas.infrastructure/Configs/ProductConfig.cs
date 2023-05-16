@@ -17,6 +17,7 @@ namespace ventas.infrastructure.Configs
 			builder.ToTable("Product");
 			builder.HasKey(x => x.Id);
 
+
 			builder.Property(x => x.Name)
 				   .HasMaxLength(50)
 
@@ -28,6 +29,12 @@ namespace ventas.infrastructure.Configs
 
 			builder.Property(x => x.Stock)
 				   .IsRequired();
+
+			//un producto pertenece a una sola categoría
+			builder.HasOne(p => p.Category).
+				WithMany(c => c.Products)
+				.HasForeignKey(p => p.CategoryId);
+
 		}
 	}
 }

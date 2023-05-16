@@ -14,6 +14,14 @@ namespace ventas.domain.BusinessRules
 		{
 		}
 	}
+
+	public class CategoriaNoEncontradaException : Exception
+	{
+		public CategoriaNoEncontradaException(int id) : base($"La Categoria con Id {id} no fue encontrado.")
+		{
+		}
+	}
+
 	public class BusinessRulesValidator
 	{
 		const decimal ZERO = 0m;

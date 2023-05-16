@@ -37,8 +37,6 @@ namespace ventas.domain.ports.service
 			}
 
 			await _productRepository.DeleteAsync(id);
-
-			return;
 		}
 
 		public async Task<List<Product>> GetAllProductsAsync()
@@ -63,7 +61,9 @@ namespace ventas.domain.ports.service
 			existingProduct.Name = product.Name;
 			existingProduct.Price = product.Price;
 			existingProduct.Stock = product.Stock;
+			existingProduct.CategoryId = product.CategoryId; // Added line to update CategoryId
 			await _productRepository.UpdateAsync(existingProduct);
 		}
 	}
 }
+	

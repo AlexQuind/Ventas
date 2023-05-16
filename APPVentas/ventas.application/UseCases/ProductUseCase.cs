@@ -16,7 +16,7 @@ namespace ventas.application.UseCases
 	{
 		private readonly IProductService _productService;
 
-		public ProductUseCase(IProductService productService, IMapper mapper)
+		public ProductUseCase(IProductService productService)
 		{
 			_productService = productService;
 		}

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ventas.application.DTOs
 {
-	internal class CategoryDTO
+	public class CategoryDTO
 	{
+		public int Id { get; set; }
+		public string? Name { get; set; }
+		public List<ProductDTO>? Products { get; set; }
 	}
 }

@@ -378,3 +378,13 @@ C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.API\bin\Debug\net6.0\runtime
 C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.API\bin\Debug\net6.0\Oracle.EntityFrameworkCore.dll
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.API\bin\Debug\net6.0\Oracle.ManagedDataAccess.dll
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.API\bin\Debug\net6.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.API\bin\Debug\net6.0\System.DirectoryServices.dll
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.API\bin\Debug\net6.0\System.DirectoryServices.Protocols.dll
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.dll
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.API\bin\Debug\net6.0\runtimes\linux\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.API\bin\Debug\net6.0\runtimes\osx\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
+C:\Users\alexa\Documents\APPVentas\APPVentas\ventas.API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll

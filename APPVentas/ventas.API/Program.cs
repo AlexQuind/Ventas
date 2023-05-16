@@ -7,6 +7,7 @@ using ventas.application.UseCases.Interfaces;
 using ventas.domain.ports.repositories;
 using ventas.domain.ports.service;
 using ventas.domain.ports.service.Interfaces;
+using ventas.infrastructure.adapters.Secondary;
 using ventas.infrastructure.Adapters.Secondary;
 using ventas.infrastructure.DbContexts;
 
@@ -20,7 +21,7 @@ var services = builder.Services;
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 services.AddDbContext<VentasContext>(options =>
 {
-	options.UseSqlServer(connectionString);
+	options.UseOracle(connectionString);
 	//x.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 });
 
@@ -41,9 +42,13 @@ services.AddSwaggerGen();
 
 services.AddTransient<IProductService, ProductService>();
 services.AddTransient<IProductRepository, ProductRepository>();
-services.AddTransient<IProductService, ProductService>();
 services.AddTransient<IProductUseCase, ProductUseCase>();
-services.AddAutoMapper(typeof(ProductProfile));
+
+services.AddScoped<ICategoryUseCase, CategoryUseCase>();
+services.AddTransient<ICategoryService, CategoryService>();
+services.AddTransient<ICategoryRepository, CategoryRepository>();
+
+//services.AddAutoMapper(typeof(ProductProfile));
 
 services.AddControllers();
 

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ventas.application.UseCases
 {
-	internal class ClientUseCase
+	public class ClientUseCase
 	{
+
 	}
 }

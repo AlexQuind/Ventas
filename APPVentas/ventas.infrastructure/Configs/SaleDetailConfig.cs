@@ -9,12 +9,12 @@ using ventas.infrastructure.Entidades;
 
 namespace ventas.infrastructure.Configs
 {
-	public class SaleDetailConfig : IEntityTypeConfiguration<SaleDetailEntity>
-	{
-		public void Configure(EntityTypeBuilder<SaleDetailEntity> builder)
-		{
-			builder.ToTable("SaleDetail");
-			builder.HasKey(x => x.Id);
-		}
-	}
+	//public class SaleDetailConfig : IEntityTypeConfiguration<SaleDetailEntity>
+	//{
+	//	public void Configure(EntityTypeBuilder<SaleDetailEntity> builder)
+	//	{
+	//		builder.ToTable("SaleDetail");
+	//		builder.HasKey(x => x.Id);
+	//	}
+	//}
 }

@@ -9,23 +9,23 @@ using ventas.infrastructure.Entidades;
 
 namespace ventas.infrastructure.Configs
 {
-	public class SaleConfig : IEntityTypeConfiguration<SaleEntity>
-	{
-		public void Configure(EntityTypeBuilder<SaleEntity> builder)
-		{
-			builder.ToTable(nameof(SaleEntity));
-			builder.HasKey(s => s.Id);
+	//public class SaleConfig : IEntityTypeConfiguration<SaleEntity>
+	//{
+	//	public void Configure(EntityTypeBuilder<SaleEntity> builder)
+	//	{
+	//		builder.ToTable(nameof(SaleEntity));
+	//		builder.HasKey(s => s.Id);
 
-			builder.Property(s => s.Fecha)
-			.IsRequired();
+	//		builder.Property(s => s.Fecha)
+	//		.IsRequired();
 
-			builder.HasOne(s => s.Client)
-			.WithMany(c => c.Sales)
-			.HasForeignKey(s => s.ClienId);
+	//		builder.HasOne(s => s.Client)
+	//		.WithMany(c => c.Sales)
+	//		.HasForeignKey(s => s.ClienId);
 
-			builder.HasMany(s => s.SaleDetails)
-		   .WithOne(sd => sd.Sale)
-		   .HasForeignKey(sd => sd.SaleId);
-		}
-	}
+	//		builder.HasMany(s => s.SaleDetails)
+	//	   .WithOne(sd => sd.Sale)
+	//	   .HasForeignKey(sd => sd.SaleId);
+	//	}
+	//}
 }

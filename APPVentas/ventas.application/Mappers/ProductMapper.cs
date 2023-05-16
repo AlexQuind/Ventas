@@ -17,7 +17,8 @@ namespace ventas.application.Mappers
 				Id = productDomain.Id,
 				Name = productDomain.Name,
 				Price = productDomain.Price,
-				Stock = productDomain.Stock
+				Stock = productDomain.Stock,
+				CategoryId = productDomain.CategoryId
 			};
 		}
 		public static Product ToDomain(ProductDTO productDTO)
@@ -27,7 +28,8 @@ namespace ventas.application.Mappers
 				Id = productDTO.Id,
 				Name = productDTO.Name,
 				Price = productDTO.Price,
-				Stock = productDTO.Stock
+				Stock = productDTO.Stock,
+				CategoryId = productDTO.CategoryId
 			};
 		}
 	}

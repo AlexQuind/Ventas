@@ -14,8 +14,4 @@
     <ProjectReference Include="..\ventas.domain\ventas.domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Mappers\" />
-  </ItemGroup>
-
 </Project>
